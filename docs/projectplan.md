@@ -1,7 +1,7 @@
 Mikael Blomstrand (mbloms@kth.se), Filip Johansson (fij@kth.se)
 
 # Project Plan IK 2218 - The rumor protocol
-The rumor protocol is a decetralized peer-to-peer gossip protocol that spreads rumors from peer-to-peer in the network. The idea is that it should be minimal and general purpose, rather than addressing a specific use.
+The rumor protocol is a decentralized peer-to-peer gossip protocol that spreads rumors from peer-to-peer in the network. The idea is that it should be minimal and general purpose, rather than addressing a specific use.
 
 ## Functionality
 The Rumor Protocol should have the following functionality.
@@ -34,7 +34,7 @@ Data will be stored in a hash table with (key, value) where key is a hash of the
 
 ## Requirements and Testing
 #### Requirement 1:
-When introduced to a new peer (by receiving an IP-adress from a known peer, or by being contacted by an unknown peer) a client should be able to store this information and use it in succeeding communication.
+When introduced to a new peer (by receiving an IP-address from a known peer, or by being contacted by an unknown peer) a client should be able to store this information and use it in succeeding communication.
 
 #### Requirement 2:
 When receiving data, a client should be able to store this data so that it can be retrieved later.
@@ -62,9 +62,9 @@ One host sends some data eg. tweet-like text message.
 The data should start spreading to all nodes in the network, and peers should start exchanging peers.
 Eventually the data should have spread to all nodes.
 
-In order to evaluate performance and behaviour (such as overhead and redundancy) all clients should log all trafic with time stamps.
+In order to evaluate performance and behaviour (such as overhead and redundancy) all clients should log all traffic with time stamps.
 ### Interesting parameters to evaluate:
-Time until each peer recievs the data.
-How many times the data was sent/recieved in total before spreading to all nodes.
+Time until each peer receives the data.
+How many times the data was sent/received in total before spreading to all nodes.
 How IP's (peer relations) propagate in the network.
 How long time until the network resembles a full graph.
