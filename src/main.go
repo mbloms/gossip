@@ -12,17 +12,38 @@ package main
 import (
 	"fmt"
 	"./peers"
+	"./rumors"
+	"./menu"
+	"./homemade_necessary_tools"
 )
 
 func main() {
 
-	fmt.Printf( "\n > Starting rumor" )
+	menuLoop:
+	for {
+		choice := menu.Display()
+		switch choice {
+		case "1":
+			// View rumors
+			rumors.View()
+		case "2":
+			// Add rumor
+			rumor := tools.ReadInput( " > Enter rumor you wish to add: ")
+			rumors.Add( rumor )
+		case "3":
+			// Add peer
+			ip := tools.ReadInput( " > Add IP address of the peer you wish to add: " )
+			peers.Add( ip )
+		case "4":
+			// List peers
+			peers.List()
+		case "q":
+			break menuLoop
+		default:
+			fmt.Printf( " > Choose one of the given options." )
+		}
+	}
 
-	//peers.Add( "192.168.1.1" )
-	p := peers.Read()
-	fmt.Printf( "\n PEERS: %v", p )
-	peer := peers.GetOne( p )
-	fmt.Printf( "\n > %v", peer )
-	fmt.Printf( "\n > Stopping rumor" )
+	//peer := peers.GetOne( p )
 
 }
